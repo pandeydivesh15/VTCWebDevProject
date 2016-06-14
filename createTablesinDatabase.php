@@ -1,5 +1,6 @@
 <?php 
-	$conn=mysqli_connect("localhost","root","a1s2","VTCWebsiteDatabase") or die(mysqli_error($conn));//use your password
+	include 'createConnection.php';
+	
 	echo "Connection Established<br>";
 	
 	$sqlQuery="CREATE TABLE items
@@ -10,13 +11,13 @@
 	echo "items table created<br>";
 
 	$sqlQuery="CREATE TABLE persons(
-					Id INT NOT NULL,
-					Name varchar(30) NOT NULL,
+					Id INT UNIQUE AUTO_INCREMENT,
+					Name varchar(30) NOT NULL ,
 					Email char(20) NOT NULL PRIMARY KEY,
-					Password char(15) NOT NULL,
-					Contact char(10) NOT NULL,
-					Address varchar(40) NOT NULL,
-					City varchar(20) NOT NULL);";
+					Password char(20) NOT NULL UNIQUE,
+					Contact char(15) NOT NULL  UNIQUE,
+					City varchar(20) NOT NULL,
+					Address varchar(400) NOT NULL);";
 	mysqli_query($conn,$sqlQuery) or die("Error creating table".mysqli_error($conn));
 	echo "persons table created<br>";
 
@@ -24,8 +25,9 @@
 					Id INT NOT NULL,
 					Name varchar(30) NOT NULL,
 					Email char(20) NOT NULL PRIMARY KEY,
-					Message varchar(300) NOT NULL);";
+					Message varchar(500) NOT NULL);";
 	mysqli_query($conn,$sqlQuery) or die("Error creating table".mysqli_error($conn));
 	echo "contact table created<br>";
-
+	mysqli_close($conn);
+	echo "Connection Closed";
 ?>
