@@ -42,7 +42,7 @@
 			</div>
 			<div class="col-lg-5">
 				<h2 style="font-weight: bold;">Sign Up</h2>
-				<form role="form">
+				<form role="form" action="" method="post">
 					<div class="form-group">
 						<input class="form-control custom3" type="text" name="userName" required="True" placeholder="Your Name">
 					</div>
@@ -59,10 +59,39 @@
 						<input class="form-control custom3" type="text" name="userCity" required="True" placeholder="City">
 					</div>
 					<div class="form-group">
-						<textarea class="form-control custom3" rows="3" name="userAddress" required="True" placeholder="Address"></textarea> 
+						<input class="form-control custom3" name="userAddress" required="True" placeholder="Address"> 
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>	
+				<?php 
+					//Establish connection
+					
+					if($_SERVER["REQUEST_METHOD"]=="POST")
+					{
+						require 'createConnection.php';
+					
+						$sql="INSERT INTO persons(Name,Email,Password,Contact,City,Address) Values('".$_POST['userName']."','".$_POST['userEmail']."','".$_POST['userPasswd']."','".$_POST['userContact']."','".$_POST['userCity']."','".$_POST['userAddress']."');";
+						if (mysqli_query($conn,$sql)) {
+							$message="We have successfully signed you up!";
+
+						}
+						else
+						{
+							$message="There was a problem while signing you up:<br>".mysqli_error($conn);
+						}	
+						$conn->close();		
+					}	
+
+				 ?>
+				 <?php 
+				
+						if(isset($message))
+						{
+						echo "<div align='center'>".$message."</div>";
+						}
+
+				 ?>
+				
 
 			</div>
 		</div>
@@ -96,6 +125,6 @@
 
 
 	<!--Modal for login-->
-	<?php include 'loginModule.php'; ?>
+	<?php include 'loginModal.php'; ?>
 </body>
 </html>			
