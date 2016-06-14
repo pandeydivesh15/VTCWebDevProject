@@ -127,7 +127,7 @@
 
 
 	<!--Modal for login-->
-	<?php include 'loginModule.php'; ?>
+	<?php include 'loginModal.php'; ?>
 	
 </body>
 </html>			
