@@ -13,6 +13,8 @@
  	
 </head>
 <body>
+	<!--Modal for login-->
+	<?php include 'loginModal.php'; ?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	    <div class="container-fluid">
 	    	<div class="navbar-header">
@@ -109,7 +111,6 @@
 	</footer>
 
 
-	<!--Modal for login-->
-	<?php include 'loginModal.php'; ?>
+	
 </body>
 </html>			

@@ -14,6 +14,8 @@
  	
 </head>
 <body>
+	<!--Modal for login-->
+	<?php include 'loginModal.php'; ?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	    <div class="container-fluid">
 	    	<div class="navbar-header">
@@ -26,11 +28,11 @@
 	    	</div>
 	    	<div class="collapse navbar-collapse" id="cNav">
 	    	<ul class="nav navbar-nav navbar-right">
-	    	    <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-	    	    
-	    	    <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> 
-	    	     Settings</a></li>
-	    	    <li><a href="index.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+	    	    <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	    	    <li><a data-toggle="modal" data-target="#logInId"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	    	    <li><a href="contact.php"><span class="glyphicon glyphicon-phone-alt"></span>  
+	    	     Contact Us</a></li>
+	    	    <li><a href="about.php"><span class="glyphicon glyphicon-tasks"></span> About Us</a></li>
 	    	</ul>
 	    	</div>
 	    </div>
@@ -39,10 +41,9 @@
 	<div class="container-fluid">
 	<div class="row">
 	<div class="col-lg-offset-4 col-lg-4" style="text-align: center">
-		<h2 style="margin-bottom: 25px;">THANK YOU FOR SHOPPING<span class="glyphicon glyphicon-thumbs-up"></span></h2>
-		<p>Thank you for ordering from E-Store. The order shall be delivered to you shortly.</p>   
-		<p>To order more items, <a href="home.php">click here.</a> </p>
+		<p>Enter your Email and password correctly.<a href="index.php"> Please try again.</a> </p>
 	</div>
 	</div>
+	
 </body>
 </html>

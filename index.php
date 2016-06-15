@@ -12,6 +12,8 @@
  	
 </head>
 <body>
+	<!--Modal for login-->
+	<?php include 'loginModal.php'; ?>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	    <div class="container-fluid">
 	    	<div class="navbar-header">
@@ -124,10 +126,5 @@
 		</div>
 		<br><p align="right"><span class="glyphicon glyphicon-copyright-mark"></span><span style="font-size: 80%;"> E-Store</span></p>
 	</footer>
-
-
-	<!--Modal for login-->
-	<?php include 'loginModal.php'; ?>
-	
 </body>
 </html>			
