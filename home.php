@@ -1,3 +1,4 @@
+<?php include 'beforeUserLoginCheck.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>

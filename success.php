@@ -1,6 +1,6 @@
-</body>
-</html>
+<?php include 'beforeUserLoginCheck.php'; ?>
 <!DOCTYPE html>
+
 <html>
 <head>
 	<title>Welcome to the E-Store</title>

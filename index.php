@@ -1,3 +1,4 @@
+<?php include 'afterUserLoginCheck.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
