@@ -42,8 +42,13 @@
 		<div class="panel-heading">Mobile 1</div>
 		<div class="panel-body custom2" align="center"><img class="img-responsive" style="max-height: 200px" src="Images/Asus-Zenfone-2-Laser-ZE550KL-SDL121786215-1-72d52.jpg" alt="Image can't be displayed" >
 			<p align="center">Asus Zenfone 2 Laser ZE550KL (16GB) Rs. 8999.</p>
-			<button class="btn btn-primary btn-block">Add to the Cart!</button>
-		</div>
+			<a href="cartScript.php?id=1&add=add" name="add" value="add"><button class="btn btn-primary btn-block">
+				<?php
+					require_once("addOrAdded_forCart.php");
+					echo message(1);
+				?>
+			</button></a>
+			</div>
 		</div>
 	</div>
 
@@ -52,7 +57,12 @@
 		<div class="panel-heading">Mobile 2</div>
 		<div class="panel-body custom2" align="center"><img class="img-responsive" style="max-height: 200px" src="Images/Mi4i-16GB-SDL137015877-1-55892.jpg" alt="Image can't be displayed" >
 			<p align="center">Xiaomi Mi4i (16GB) Rs. 11999.</p>
-			<button class="btn btn-primary btn-block">Add to the Cart!</button>
+			<a href="cartScript.php?id=2&add=add" name="add" value="add"><button class="btn btn-primary btn-block">
+				<?php
+					require_once("addOrAdded_forCart.php");
+					echo message(2);
+				?>
+			</button></a>
 		</div>
 		</div>
 	</div>
@@ -62,7 +72,12 @@
 		<div class="panel-heading">Mobile 3</div>
 		<div class="panel-body custom2" align="center"><img class="img-responsive" style="max-height: 200px" src="Images/cvsfdlienove-2ba21.jpg" alt="Image can't be displayed" >
 			<p align="center">Lenovo Vibe X2 (32GB, White) Rs. 9679.</p>
-			<button class="btn btn-primary btn-block">Add to the Cart!</button>
+			<a href="cartScript.php?id=3&add=add" name="add" value="add"><button class="btn btn-primary btn-block">
+				<?php
+					require_once("addOrAdded_forCart.php");
+					echo message(3);
+				?>
+			</button></a>
 		</div>
 		</div>
 	</div>
@@ -73,7 +88,12 @@
 		<div class="panel-heading">Mobile 4</div>
 		<div class="panel-body custom2" align="center"><img class="img-responsive" style="max-height: 200px" src="Images/HTC-Desire-626-g--SDL935932578-1-efeb2.jpg" alt="Image can't be displayed" >
 			<p align="center">HTC Desire 626 G+ Rs. 10167.</p>
-			<button class="btn btn-primary btn-block">Add to the Cart!</button>
+			<a href="cartScript.php?id=4&add=add" name="add" value="add"><button class="btn btn-primary btn-block">
+				<?php
+					require_once("addOrAdded_forCart.php");
+					echo message(4);
+				?>
+			</button></a>
 		</div>
 		</div>
 	</div>
@@ -83,7 +103,12 @@
 		<div class="panel-heading">Mobile 5</div>
 		<div class="panel-body custom2" align="center"><img class="img-responsive" style="max-height: 200px" src="Images/Micromax-Canvas-Silver-Q450-SDL173548237-1-0791c.jpg" alt="Image can't be displayed" >
 			<p align="center">Micromax Canvas Sliver 5 Q450 16GB Rs. 8250.</p>
-			<button class="btn btn-primary btn-block">Add to the Cart!</button>
+			<a href="cartScript.php?id=5&add=add" name="add" value="add"><button class="btn btn-primary btn-block">
+				<?php
+					require_once("addOrAdded_forCart.php");
+					echo message(5);
+				?>
+			</button></a>
 		</div>
 		</div>
 	</div>
@@ -93,7 +118,12 @@
 		<div class="panel-heading">Mobile 6</div>
 		<div class="panel-body custom2" align="center"><img class="img-responsive" style="max-height: 200px" src="Images/Microsoft-Lumia-640-XL-Dual-SDL257999608-1-b52ac.jpg" alt="Image can't be displayed" >
 			<p align="center">Microsoft Lumia 640 XL Dual SIM 8GB Rs. 11997.</p>
-			<button class="btn btn-primary btn-block">Add to the Cart!</button>
+			<a href="cartScript.php?id=6&add=add" name="add" value="add"><button class="btn btn-primary btn-block">
+				<?php
+					require_once("addOrAdded_forCart.php");
+					echo message(6);
+				?>
+			</button></a>
 		</div>
 		</div>
 	</div>
