@@ -45,10 +45,27 @@
 							Item Number
 						</th>
 						<th> Price</th>
+						<th></th>
 					</thead>
+					<tbody>
+						<?php
+							require 'createConnection.php';
+							$sum=0;
+							$sqlQuery = "SELECT `id`, `price` FROM `items` WHERE `cart`=1";
+							$result=mysqli_query($conn, $sqlQuery);
+							while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
+							{
+								$sum+= $row["price"];
+								$id = $row["id"].", ";
+								echo "<tr><td>"."#".$row["id"]."</td><td>".$row['price']."</td><td><a href='remove.php?
+								id={$row['id']}' style='float: right;'>Remove</a></td></tr>";
+							}
+							echo "<tr ><td>Total:</td><td>".$sum."</td><td><a href='success.php' class='btn btn-primary btn-sm' style='float: right;'> Confirm your order!</a></td></tr>";
+						?>
+					</tbody>
 				</table>
 				<div style="text-align: center;">
-				<button class="btn btn-primary"><a style="color:white" href="home.php">Go Back To Home</a></button>	
+				<a href="home.php"><button class="btn btn-primary btn-lg">Go Back To Home</button></a>
 				</div>
 	</div>
 	</div>
