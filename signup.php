@@ -45,7 +45,7 @@
 			</div>
 			<div class="col-lg-5">
 				<h2 style="font-weight: bold;">Sign Up</h2>
-				<form role="form" action="" method="post">
+				<form role="form" action="signupScript.php" method="post">
 					<div class="form-group">
 						<input class="form-control custom3" type="text" name="userName" required="True" placeholder="Your Name">
 					</div>
@@ -66,34 +66,7 @@
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>	
-				<?php 
-					//Establish connection
-					
-					if($_SERVER["REQUEST_METHOD"]=="POST" AND $_POST['userName'])
-					{
-						require 'createConnection.php';
-					
-						$sql="INSERT INTO persons(Name,Email,Password,Contact,City,Address) Values('".$_POST['userName']."','".$_POST['userEmail']."','".$_POST['userPasswd']."','".$_POST['userContact']."','".$_POST['userCity']."','".$_POST['userAddress']."');";
-						if (mysqli_query($conn,$sql)) {
-							$message="We have successfully signed you up!";
-
-						}
-						else
-						{
-							$message="There was a problem while signing you up:<br>".mysqli_error($conn);
-						}	
-						$conn->close();		
-					}	
-
-				 ?>
-				 <?php 
 				
-						if(isset($message))
-						{
-						echo "<div align='center'>".$message."</div>";
-						}
-
-				 ?>
 				
 
 			</div>
