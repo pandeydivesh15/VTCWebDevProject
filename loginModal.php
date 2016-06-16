@@ -1,34 +1,3 @@
-<?php 
-    	
-		if($_SERVER["REQUEST_METHOD"]=="POST" AND $_POST['email'])  
-		{
-			require 'createConnection.php';   //Establish connection
-		
-			$sql="SELECT Email,Password FROM persons;";
-			$data=mysqli_query($conn,$sql) or die();
-			$rowForCheck=mysqli_fetch_array($data, MYSQLI_NUM);
-			echo "<br>";
-			
-			while ($rowForCheck) 
-			{
-				$tempEmail=$rowForCheck[0];
-				$tempPwd=$rowForCheck[1];
-				if ($tempPwd==$_POST['passwd'] AND $tempEmail==$_POST['email'])
-				{
-					session_start();
-					$_SESSION['email']=$tempEmail;
-					$conn->close();
-					header('location:home.php');
-					return;
-				}
-				$rowForCheck=mysqli_fetch_array($data, MYSQLI_NUM);
-
-			}
-			header('location:error.php');
-
-			$conn->close();		
-		}
-?>
 <!--Modal for login-->
 	<div id="logInId" class="modal custom1 fade" role="dialog">
 		<div class="modal-dialog">
@@ -40,7 +9,7 @@
 		      </div>
 		      <div class="modal-body">
 		        <p>Don't have a account. <a href="signup.php">Register</a></p>
-		        <form role="form" action="" method="post">
+		        <form role="form" action="login-script.php" method="post">
 		        <div class="form-group">
 		        	<input class="form-control" required="True" type="text" name="email" placeholder="Email"></input></div>
 		        <div class="form-group">
