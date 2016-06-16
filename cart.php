@@ -52,7 +52,7 @@
 							require 'createConnection.php';
 							$sum=0;
 							$sqlQuery = "SELECT `id`, `price` FROM `items` WHERE `cart`=1";
-							$result=mysqli_query($conn, $sqlQuery);
+							$result=mysqli_query($conn, $sqlQuery) or die(mysqli_error($conn));
 							while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
 							{
 								$sum+= $row["price"];
@@ -60,7 +60,10 @@
 								echo "<tr><td>"."#".$row["id"]."</td><td>".$row['price']."</td><td><a href='remove.php?
 								id={$row['id']}' style='float: right;'>Remove</a></td></tr>";
 							}
-							echo "<tr ><td>Total:</td><td>".$sum."</td><td><a href='success.php' class='btn btn-primary btn-sm' style='float: right;'> Confirm your order!</a></td></tr>";
+							if ($sum != 0) {
+								echo "<tr ><td>Total:</td><td>".$sum."</td><td><a href='success.php?sum={$sum}' class='btn btn-primary btn-sm' style='float: right;'> Confirm your order!</a></td></tr>";
+							}
+							
 						?>
 					</tbody>
 				</table>
