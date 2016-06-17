@@ -56,7 +56,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	    <div class="container-fluid">
 	    	<div class="navbar-header">
-	    		<a class="navbar-brand" href="#">E-Store</a>
+	    		<a class="navbar-brand" href="index.php">E-Store</a>
 	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cNav">
 	    			<span class="icon-bar"></span>
 	    			<span class="icon-bar"></span>
@@ -69,7 +69,7 @@
 	    	    
 	    	    <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> 
 	    	     Settings</a></li>
-	    	    <li><a href="index.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+	    	    <li><a href="logoutScript.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
 	    	</ul>
 	    	</div>
 	    </div>
