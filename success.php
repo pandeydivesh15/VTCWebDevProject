@@ -1,6 +1,45 @@
 <?php include 'beforeUserLoginCheck.php'; ?>
-<!DOCTYPE html>
+<?php 
+	if (!$_GET['sum']) {
+		die("Inappropriate Request!");
+	}
+	require("createConnection.php");
+	$sqlQuery = "SELECT `id` FROM items WHERE `cart`=1";
+	$result=mysqli_query($conn, $sqlQuery) or die(mysqli_error($conn));
+	if ($result) {
+		$tempArray=array();
+		while($row = mysqli_fetch_array($result,MYSQLI_ASSOC))
+		{
+			$tempArray[]=$row['id'];
+		}	
 
+		$message="<h2 style='margin-bottom: 25px';>THANK YOU FOR SHOPPING<span class='glyphicon glyphicon-thumbs-up'></span></h2>
+		<p>Thank you for ordering from E-Store. The order shall be delivered to you shortly.</p>   
+		<p>To order more items, <a href='home.php'>click here.</a> </p>";
+		$userMessage="Thank You for ordering. Your items will be dispatched very soon.\nYour total Cost is {$_GET['sum']}.";
+		$sqlQuery = "SELECT Name FROM persons WHERE Email='".$_SESSION['email']."'";
+		$result=mysqli_query($conn, $sqlQuery) or die(mysqli_error($conn));
+		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		$ownerMessage="Details about the user:	".$row['Name']."\nEmail:	{$_SESSION['email']}\nTotal Cost:	{$_GET['sum']}\nOrdered Items: 	";
+		$cnt=count($tempArray);
+		for ($i=0; $i < $cnt; $i++)
+		{ 
+			$ownerMessage=$ownerMessage." #".$tempArray[$i]." ";
+		}
+		$headers = "From: webmaster@etore.com";
+		mail($_SESSION['email'], "Order Confirmation", $userMessage,$headers);
+		mail("diveshpandey15@gmail.com", "New Order Confirmation", $ownerMessage,$headers);
+
+		mysqli_query($conn, "UPDATE `items` SET `cart`=0");
+		$conn->close();	
+
+	}
+	else
+	{
+		$message="<h4>There were no items in your cart.</h4>";		
+	}
+ ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Welcome to the E-Store</title>
@@ -39,9 +78,7 @@
 	<div class="container-fluid">
 	<div class="row">
 	<div class="col-lg-offset-4 col-lg-4" style="text-align: center">
-		<h2 style="margin-bottom: 25px;">THANK YOU FOR SHOPPING<span class="glyphicon glyphicon-thumbs-up"></span></h2>
-		<p>Thank you for ordering from E-Store. The order shall be delivered to you shortly.</p>   
-		<p>To order more items, <a href="home.php">click here.</a> </p>
+		<?php echo $message; ?>
 	</div>
 	</div>
 </body>
