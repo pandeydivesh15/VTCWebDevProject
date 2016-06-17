@@ -22,7 +22,7 @@
 	echo "persons table created<br>";
 
 	$sqlQuery="CREATE TABLE contact(
-					Id INT NOT NULL,
+					Id INT NOT NULL UNIQUE AUTO_INCREMENT,
 					Name varchar(30) NOT NULL,
 					Email char(20) NOT NULL PRIMARY KEY,
 					Message varchar(500) NOT NULL);";
