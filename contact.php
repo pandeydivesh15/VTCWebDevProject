@@ -18,7 +18,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	    <div class="container-fluid">
 	    	<div class="navbar-header">
-	    		<a class="navbar-brand" href="#">E-Store</a>
+	    		<a class="navbar-brand" href="index.php">E-Store</a>
 	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cNav">
 	    			<span class="icon-bar"></span>
 	    			<span class="icon-bar"></span>
@@ -55,7 +55,7 @@
 		<div class="row">
 			<div class="col-lg-8" style="margin-bottom: 20px">
 				<h2 style="font-weight: bold">CONTACT US</h2>
-				<form role="form">
+				<form role="form" action="contactScript.php" method="post">
 					<div class="form-group">
 						<label>Name:</label>
 						<input class="form-control custom3" type="text" name="personName" required="True">

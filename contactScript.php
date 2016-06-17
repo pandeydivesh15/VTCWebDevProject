@@ -1,3 +1,23 @@
+<?php 
+	//Establish connection
+	
+	if($_SERVER["REQUEST_METHOD"]=="POST" AND $_POST['personName'] AND $_POST['personEmail'])
+	{
+		require 'createConnection.php';
+	
+		$sqlQuery="INSERT INTO contact(Name,Email,Message) Values('".$_POST['personName']."','".$_POST['personEmail']."','".$_POST['pMessage']."');";
+		if (mysqli_query($conn,$sqlQuery)) {
+			$message="Thank-you for your message. We will get back to you as soon as possible. Go back to website <a href='index.php'>here</a>";
+
+		}
+		else
+		{
+			$message="There was a problem in recieving your message:<br><a href='contact.php'>Please Try again</a><br>Error reported was:<br>".mysqli_error($conn);
+		}	
+		$conn->close();		
+	}	
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +59,7 @@
 	<div class="container-fluid">
 	<div class="row">
 	<div class="col-lg-offset-4 col-lg-4" style="text-align: center">
-		<p>Enter your Email and password correctly.<a href="index.php"> Please try again.</a> </p>
+		<p><?php echo $message; ?></p>
 	</div>
 	</div>
 	

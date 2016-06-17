@@ -19,7 +19,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	    <div class="container-fluid">
 	    	<div class="navbar-header">
-	    		<a class="navbar-brand" href="#">E-Store</a>
+	    		<a class="navbar-brand" href="index.php">E-Store</a>
 	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cNav">
 	    			<span class="icon-bar"></span>
 	    			<span class="icon-bar"></span>
