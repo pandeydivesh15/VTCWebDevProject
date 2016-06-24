@@ -39,7 +39,7 @@
 	<div class="row">
 	<div class="col-lg-offset-4 col-lg-4">
 		<h2 style="text-align: center">CHANGE PASSWORD</h2>
-				<form role="form">
+				<form role="form" action="passwdChangeScript.php" method="post">
 					<div class="form-group">
 						<input class="form-control custom3" type="password" name="oldPasswd" required="True" placeholder="Old Password">
 					</div>
@@ -51,6 +51,12 @@
 					</div>
 					<button type="submit" class="btn btn-primary btn-block">Update</button>
 				</form>	
+				<?php 
+					if (isset($_GET['result'])) 
+					{
+						echo "<br><br><h3 align='center'>".$_GET['result']."</h3>";
+					}
+				 ?>
 	</div>
 	</div>
 </body>
