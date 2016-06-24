@@ -56,7 +56,7 @@
 						<input class="form-control custom3" type="password" name="userPasswd" required="True" placeholder="Password">
 					</div>
 					<div class="form-group" >
-						<input class="form-control custom3 " type="text" name="userContact" required="True" placeholder="Contact Number">
+						<input class="form-control custom3 " type="number" name="userContact" required="True" placeholder="Contact Number">
 					</div>
 					<div class="form-group">
 						<input class="form-control custom3" type="text" name="userCity" required="True" placeholder="City">
