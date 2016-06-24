@@ -39,7 +39,7 @@
 	<div class="container-fluid">
 	<div class="row">
 	<div class="col-lg-offset-4 col-lg-4" style="text-align: center">
-		<p>Enter your Email and password correctly.<a href="index.php"> Please try again.</a> </p>
+		<p>Couldn't log you in.<br><?php if (isset($_GET['error'])){ echo "Error:".$_GET['error'];} ?><br><a href="index.php"> Please try again.</a> </p>
 	</div>
 	</div>
 	

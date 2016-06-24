@@ -4,27 +4,46 @@
 		{
 			require 'createConnection.php';   //Establish connection
 		
-			$sql="SELECT Email,Password FROM persons;";
+			
+			$sql="SELECT Email FROM persons;";
 			$data=mysqli_query($conn,$sql) or die();
 			$rowForCheck=mysqli_fetch_array($data, MYSQLI_NUM);
-			echo "<br>";
-			
-			while ($rowForCheck) 
+			$flag=0;
+			while ($rowForCheck) 		//First we see if given Email exists	
 			{
 				$tempEmail=$rowForCheck[0];
-				$tempPwd=$rowForCheck[1];
-				if ($tempPwd==$_POST['passwd'] AND $tempEmail==$_POST['email'])
+				if ($tempEmail==$_POST['email'])
 				{
-					session_start();
-					$_SESSION['email']=$tempEmail;
-					$conn->close();
-					header('location:home.php');
-					return;
+					$flag=1;  
+					break;
 				}
 				$rowForCheck=mysqli_fetch_array($data, MYSQLI_NUM);
 
 			}
-			header('location:error.php');
+			if(!$flag)
+				$error=" The Email address you entered is <b>not</b> registered. ";
+			if (!isset($error)) {
+				$sql="SELECT Email,Password FROM persons;";
+				$data=mysqli_query($conn,$sql) or die();
+				$rowForCheck=mysqli_fetch_array($data, MYSQLI_NUM);
+				while ($rowForCheck) 
+				{
+					$tempEmail=$rowForCheck[0];
+					$tempPwd=$rowForCheck[1];
+					if ($tempPwd==$_POST['passwd'] AND $tempEmail==$_POST['email'])
+					{
+						session_start();
+						$_SESSION['email']=$tempEmail;
+						$conn->close();
+						header('location:home.php');
+						return;
+					}
+					$rowForCheck=mysqli_fetch_array($data, MYSQLI_NUM);
+
+				}
+				$error="<b> Entered password is incorrect.<b>";
+			}
+			header('location:error.php?error='.$error);
 
 			$conn->close();		
 		}
