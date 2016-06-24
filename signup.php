@@ -50,7 +50,7 @@
 						<input class="form-control custom3" type="text" name="userName" required="True" placeholder="Your Name">
 					</div>
 					<div class="form-group">
-						<input class="form-control custom3" type="text" name="userEmail" required="True" placeholder="Email">
+						<input class="form-control custom3" type="email" name="userEmail" required="True" placeholder="Email">
 					</div>
 					<div class="form-group">
 						<input class="form-control custom3" type="password" name="userPasswd" required="True" placeholder="Password">
@@ -66,6 +66,10 @@
 					</div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>	
+				<?php 
+					if (isset($error))
+						 echo $error;
+				?>
 				
 				
 

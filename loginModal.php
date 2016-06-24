@@ -11,7 +11,7 @@
 		        <p>Don't have a account. <a href="signup.php">Register</a></p>
 		        <form role="form" action="login-script.php" method="post">
 		        <div class="form-group">
-		        	<input class="form-control" required="True" type="text" name="email" placeholder="Email"></input></div>
+		        	<input class="form-control" required="True" type="email" name="email" placeholder="Email"></input></div>
 		        <div class="form-group">
 		        	<input class="form-control" required="True" type="password" name="passwd" placeholder="Password"></input></div>
 		        <input class="btn btn-primary" type="submit" value="Login"></input>

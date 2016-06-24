@@ -62,7 +62,7 @@
 					</div>
 					<div class="form-group">
 						<label>Email:</label>
-						<input class="form-control custom3" type="text" name="personEmail" required="True">
+						<input class="form-control custom3" type="email" name="personEmail" required="True">
 					</div>
 					<div class="form-group">
 						<label>Message:</label>
