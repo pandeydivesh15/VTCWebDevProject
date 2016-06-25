@@ -30,7 +30,8 @@
 				{
 					$tempEmail=$rowForCheck[0];
 					$tempPwd=$rowForCheck[1];
-					if ($tempPwd==$_POST['passwd'] AND $tempEmail==$_POST['email'])
+					$tempPwdCheck=md5($_POST['passwd']); //As database stores md5() hashed version of user's password
+					if ($tempPwd==$tempPwdCheck AND $tempEmail==$_POST['email'])
 					{
 						session_start();
 						$_SESSION['email']=$tempEmail;
