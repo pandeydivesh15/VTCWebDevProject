@@ -30,6 +30,9 @@
 		{
 			$error="Please enter a valid Mobile Number.";
 		}
+		if (strip_tags($_POST['userPasswd'])!=$_POST['userPasswd']) {
+			$error="Sign up not successfull. Make sure that you dont insert HTML/PHP tags in your password.";
+		}
 
 		if (!isset($error)) {
 			$name  =strip_tags(mysqli_real_escape_string($conn,$_POST['userName']));
