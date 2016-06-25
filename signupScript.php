@@ -3,6 +3,7 @@
 	
 	if($_SERVER["REQUEST_METHOD"]=="POST" AND $_POST['userName'])
 	{
+		
 		require 'createConnection.php';
 		$sql="SELECT Email FROM persons;";
 		$data=mysqli_query($conn,$sql) or die();
@@ -31,15 +32,21 @@
 		}
 
 		if (!isset($error)) {
-			$sql="INSERT INTO persons(Name,Email,Password,Contact,City,Address) Values('".$_POST['userName']."','".$_POST['userEmail']."','".$_POST['userPasswd']."','".$_POST['userContact']."','".$_POST['userCity']."','".$_POST['userAddress']."');";
+			$name  =strip_tags(mysqli_real_escape_string($conn,$_POST['userName']));
+			$email =strip_tags(mysqli_real_escape_string($conn,$_POST['userEmail']));
+			$pwd   =strip_tags(mysqli_real_escape_string($conn,$_POST['userPasswd']));
+			$num   =strip_tags(mysqli_real_escape_string($conn,$_POST['userContact']));
+			$city  =strip_tags(mysqli_real_escape_string($conn,$_POST['userCity']));
+			$addr  =strip_tags(mysqli_real_escape_string($conn,$_POST['userAddress']));
+
+			$pwd=md5($pwd);		//md5 hashing used
+			$sql="INSERT INTO persons(Name,Email,Password,Contact,City,Address) Values('".$name."','".$email."','".$pwd."','".$num."','".$city."','".$addr."');";
 
 			if (mysqli_query($conn,$sql)) {
 				$message="We have successfully signed you up! Go to <a href='index.php'>Login</a>";
-
 			}
 			else
 			{
-				
 				$error="There was a problem while signing you up:<br><a href='signup.php'>Try again</a><br>Error reported was:<br>".mysqli_error($conn);
 			}	
 		}
