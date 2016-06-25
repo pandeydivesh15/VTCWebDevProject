@@ -14,7 +14,7 @@
 					Id INT UNIQUE AUTO_INCREMENT,
 					Name varchar(30) NOT NULL ,
 					Email char(20) NOT NULL PRIMARY KEY,
-					Password char(20) NOT NULL,
+					Password char(40) NOT NULL,
 					Contact char(15) NOT NULL  UNIQUE,
 					City varchar(20) NOT NULL,
 					Address varchar(400) NOT NULL);";
