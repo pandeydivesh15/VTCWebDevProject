@@ -1,1 +1,1 @@
-<?php $conn=mysqli_connect("localhost","root","a1s2","VTCWebsiteDatabase") or die(mysqli_error($conn));//use your password ?>
+<?php $conn=mysqli_connect("localhost","root","","VTCWebsiteDatabase") or die(mysqli_error($conn));//use your password ?>
