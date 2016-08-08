@@ -6,3 +6,7 @@ To run this project on your system, you must have LAMP/WAMP server installed on 
 In Linux based systems, extract the contents of this project in /var/www/html/ and then start Apache web server by typing "sudo /etc/init.d/apache2 start" in your terminal.
 
 Then in your browser, go to "http://localhost/assignment1Final/index.php" to start.
+
+Update 1: I have created a demo of the same. Please note that all the MySQL features will not run in this demo.
+
+Link of the demo: https://sample-e-commerce.herokuapp.com/
